@@ -1,0 +1,35 @@
+3강  linux 명령어
+
+sudo apt update  와 sudo apt-get update 차이
+# apt는 사용자 친화적이고 현대적인 인터페이스로, 일상적인 패키지 관리에 적합합니다.
+# apt-get은 더 세밀한 제어가 필요하거나 스크립트에서 안정적인 동작이 필요한 경우에 적합합니다.
+# 초보자에게는 별차이 없음.
+
+#소프트웨어 패키지 업데이트 
+sudo apt update 
+sudo apt upgrade
+
+#git 저장소 설치
+sudo apt install git gitk git-gui 
+
+ # pip install testresources  는 구지 설치 않하셔도 됩니다. 
+
+ # GitHub 에서 ArduPilot download & install (5분 정도 소요)
+cd && git clone https://github.com/ArduPilot/ardupilot.git --recursive
+cd ardupilot/
+# Install required packages. (10분 이상 소요, 352 newly installed)
+Tools/environment_install/install-prereqs-ubuntu.sh -y
+# 타이핑 하실필요없이  
+cd ardu까지만 타이핑하고  tap 카를 누르세요 자동완성됩니다.
+그리고 
+Tools/environment_install/install-prereqs-ubuntu.sh -y 는 복사 붙여 넣기 해주세요
+
+cd ~  #홈으로 이동
+.~/.profile  #프로파일 업데이트 
+
+#ardupilot 시뮬레이션 실행 
+cd ~
+cd ardupilot/ArduCopter/
+sim_vehicle.py -w
+sim_vehicle.py --console --map 
+
