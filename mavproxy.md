@@ -27,35 +27,39 @@ Python, pyserial, select() 함수 호출이 가능한 POSIX 기반 운영체제(
 
 
 # 홈디렉토리 이동  
-cd $HOME  도는 cd ~
 
 
-# home/dronedev/ardu-sim/parameters 생성
+cd ~
+
+
+## home/dronedev/ardu-sim/parameters 생성
+
 mkdir -p ardu-sim/parameters 
 
-#binary 와 default parameter 복사
+## binary 와 default parameter 복사
+
 cp -a $HOME/ardupilot/build/sitl/bin/. $HOME/ardu-sim/ 
 
-# copter & plane & rover default parameters 복사 
+## copter & plane & rover default parameters 복사 
 cp $HOME/ardupilot/Tools/autotest/default_params/copter.parm $HOME/ardu-sim/parameters/copter.parm
-#cp $HOME/ardupilot/Tools/autotest/default_params/plane.parm $HOME/ardu-sim/parameters/plane.parm
-#cp $HOME/ardupilot/Tools/autotest/default_params/rover.parm $HOME/ardu-sim/parameters/rover.parm
+cp $HOME/ardupilot/Tools/autotest/default_params/plane.parm $HOME/ardu-sim/parameters/plane.parm
+cp $HOME/ardupilot/Tools/autotest/default_params/rover.parm $HOME/ardu-sim/parameters/rover.parm
 
-#홈디렉토리 ardu-sim 폴더로 이동
+## 홈디렉토리 ardu-sim 폴더로 이동
 cd ~
 cd ardu-sim/
 
-#새로운 커멘트 창 열고 비행체가 임무수행할 logs폴더 생성
+## 새로운 커멘트 창 열고 비행체가 임무수행할 logs폴더 생성
 cd ~
 mkdir -p ardu-sim/logs
 cd ardu-sim/logs/
 
 
 
-#명지전문대학교 드론 준비
+## 명지전문대학교 드론 준비
 ./arducopter -S --model copter --speedup 1 --defaults parameters/copter.parm -I0 --home 36.9675,127.8690,0,0 
 
-# 비행체를 개별적으로 실행.
+3# 비행체를 개별적으로 실행.
 ./arducopter -S --model copter --speedup 1 --defaults parameters/copter.parm -I0 --home 37.5838,126.9253,0,0 # multicopter 실행
 # ./arduplane -S --model plane --speedup 1 --defaults parameters/plane.parm -I0 --home 37.5838,126.9253,0,0 #plane 실행 
 # ./ardurover -S --model rover --speedup 1 --defaults parameters/rover.parm -I0 --home 37.5838,126.9253,0,0 #rover 실행
