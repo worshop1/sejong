@@ -45,12 +45,9 @@ cp $HOME/ardupilot/Tools/autotest/default_params/copter.parm $HOME/ardu-sim/para
 cp $HOME/ardupilot/Tools/autotest/default_params/plane.parm $HOME/ardu-sim/parameters/plane.parm
 cp $HOME/ardupilot/Tools/autotest/default_params/rover.parm $HOME/ardu-sim/parameters/rover.parm
 
-## 홈디렉토리 ardu-sim 폴더로 이동
-cd ~
-
-cd ardu-sim/
 
 ## 새로운 커멘트 창 열고 비행체가 임무수행할 logs폴더 생성
+
 cd ~
 
 mkdir -p ardu-sim/logs
