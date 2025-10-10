@@ -55,7 +55,6 @@ cd ~
 
 mkdir -p ardu-sim/logs
 
-cd ardu-sim/logs/
 
 cd $HOME/ardu-sim
 
