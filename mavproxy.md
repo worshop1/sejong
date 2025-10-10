@@ -41,8 +41,11 @@ mkdir -p ardu-sim/parameters
 cp -a $HOME/ardupilot/build/sitl/bin/. $HOME/ardu-sim/ 
 
 ## copter & plane & rover default parameters 복사 
+
 cp $HOME/ardupilot/Tools/autotest/default_params/copter.parm $HOME/ardu-sim/parameters/copter.parm
+
 cp $HOME/ardupilot/Tools/autotest/default_params/plane.parm $HOME/ardu-sim/parameters/plane.parm
+
 cp $HOME/ardupilot/Tools/autotest/default_params/rover.parm $HOME/ardu-sim/parameters/rover.parm
 
 
