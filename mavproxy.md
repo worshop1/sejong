@@ -57,7 +57,7 @@ mkdir -p ardu-sim/logs
 
 cd ardu-sim/logs/
 
-
+cd $HOME/ardu-sim
 
 ## 명지전문대학교 드론 준비
 ./arducopter -S --model copter --speedup 1 --defaults parameters/copter.parm -I0 --home 36.9675,127.8690,0,0 
