@@ -26,31 +26,7 @@ pip install pymavlink
 
 **참고**: PyPi의 Pymavlink는 **ArduPilot/mavlink** 포크를 기반으로 하며, 기본 MAVLink 저장소와 약간 다를 수 있습니다.
 
-### 2.2 사용자 정의 MAVLink 방언 생성
-
-**절차:**
-1. **mavgen 설치:**
-```bash
-python3 -m pip install -r pymavlink/requirements.txt
-```
-
-2. 사용자 정의 방언 XML 파일을 준비.
-
-3. **mavgen으로 Python 라이브러리 생성:**
-```bash
-mavgen.py --lang=Python --output=pymavlink/dialects/v20 my_dialect.xml
-```
-
-4. 생성된 `.py` 파일을 적절한 디렉토리에 복사:
-   - MAVLink 2: `pymavlink/dialects/v20`
-   - MAVLink 1: `pymavlink/dialects/v10`
-
-5. Pymavlink 설치:
-```bash
-python setup.py install --user
-```
-
----
+ 
 
 ## 3. Pymavlink 주요 모듈
 
