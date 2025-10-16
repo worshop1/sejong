@@ -100,7 +100,7 @@ print(f"Heartbeat from system {connection.target_system}, component {connection.
 | 순위 | 옵션 | 설명 | 사용 예 |
 |------|------|------|---------|
 | 1 | `--model \| -M MODEL` | 시뮬레이션 모델 지정 | `./arducopter -M quad` |
-| 2 | `--home\|-O HOME` | 시작 위치 지정 | `./arducopter -O 36.5960,126.2922,0,0` |
+| 2 | `--home\|-O HOME` | 시작 위치 지정 | `./arducopter -O 37.5843,126.925,0,0` |
 | 3 | `--speedup \| -s SPEEDUP` | 시뮬레이션 속도 | `./arducopter -s 2` |
 | 4 | `--instance \| -I N` | SITL 인스턴스 번호 | `./arducopter -I 0` |
 | 5 | `--console \| -C` | 콘솔 모드 | `./arducopter -C` |
@@ -137,7 +137,7 @@ mavproxy.py --master tcp:127.0.0.1:5760 --out udp:127.0.0.1:14550 --out udp:127.
 | `mode` | `mode GUIDED` | 비행 모드 변경 | `mode GUIDED` |
 | `arm` | `arm throttle` | 모터 활성화 | `arm throttle` |
 | `takeoff` | `takeoff 50` | 50m 이륙 | `takeoff 50` |
-| `guided` | `guided <lat> <lon> <alt>` | 특정 위치 이동 | `guided 36.5960 126.2922 50` |
+| `guided` | `guided <lat> <lon> <alt>` | 특정 위치 이동 | `guided 37.5843 126.925 50` |
 | `land` | `land` | 착륙 | `land` |
 | `wp` | `wp load mission.txt` | 임무 로드 | `wp load mission.txt` |
 
@@ -170,7 +170,7 @@ gedit ardu-sim.sh
 **스크립트 내용:**
 ```bash
 #!/bin/bash
-screen -S vehicle -d -m bash -c "./arducopter -S --model copter --speedup 1 --defaults parameters/copter.parm -I0 --home 36.5960,126.2922,0,0"
+screen -S vehicle -d -m bash -c "./arducopter -S --model copter --speedup 1 --defaults parameters/copter.parm -I0 --home  37.5843,126.925,0,0"
 screen -S proxy -d -m bash -c "mavproxy.py --master tcp:127.0.0.1:5760 --out udp:127.0.0.1:14550 --out udp:127.0.0.1:14560"
 screen -S QGC -d -m bash -c "./QGroundControl.AppImage"
 ```
