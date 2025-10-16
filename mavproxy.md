@@ -87,44 +87,60 @@ mavproxy.py --master tcp:127.0.0.1:5760 --map --console
 
 # Example
 mavproxy.py --master tcp:127.0.0.1:5760 --map #지도표현
+
 mavproxy.py --master tcp:127.0.0.1:5760 --consol #GUI 상태창
+
 mavproxy.py --master tcp:127.0.0.1:5760 --version #mavproxy version
+
 mavproxy.py --master tcp:127.0.0.1:5760 --out udp:127.0.0.1:14550 #MAVLink 패킷을 원격 장치로 전달 - QgroundControl 등 다른 GCS 가능
+
 mavproxy.py --master tcp:127.0.0.1:5760 --out remote_IP:14550
 
 
 # QgroundControl 설치순서
 sudo usermod -a -G dialout $USER # dialout 그룹에 추가합니다
+
 sudo apt-get remove modemmanager -y
+
 sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y # 비디오 및 오디오 스트리밍을 처리하기 
+
 sudo apt install libqt5gui5 -y # 그래픽 사용자 인터페이스(GUI)를 생성하는 
+
 sudo apt install libfuse2 -y # 다양한 파일 시스템을 구현하기 
 
 
 # QgroundControl 다운로드 
+
 wget https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl.AppImage #wget 명령으로 QGC 다운로드
 
 chmod +x ./QGroundControl.AppImage # 파일 사용권한 설정 옆같이 해도 실행됨. chmod +x $HOME/Downloads/QGroundControl.AppImage
 
 # chmod 
 chmod ugo +/- rwx 파일명 또는 디렉토리명: 이 옵션은 파일 또는 디렉토리의 권한을 변경합니다. u는 소유자, g는 그룹, o는 다른 사용자를 나타냅니다. r은 읽기, w는 쓰기, x는 실행 권한을 나타냅니다. +는 권한을 추가하고 -는 권한을 제거합니다.
+
 chmod a +/- rwx 파일명 또는 디렉토리명: 이 옵션은 모든 사용자에 대한 권한을 변경합니다. a는 all을 나타냅니다.
+
 chmod 0xxx 파일명 또는 디렉토리명: 이 옵션은 파일 또는 디렉토리의 권한을 8진수 숫자로 변경합니다. 각 자릿수는 읽기, 쓰기 및 실행 권한을 나타냅니다.
+
 chmod -R: 이 옵션은 디렉토리와 그 하위 디렉토리의 모든 파일에 대해 권한을 재귀적으로 변경합니다.
 
 
 
 # Mavproxy + Ardupilot + QgroundControl 실행순서
 
+
 # copter 객체 실행
+
 ./arducopter -S --model copter --speedup 1 --defaults parameters/copter.parm -I0 --home 37.5838,126.9253,0,0
 
 
 #QgroundControl 폴더로이동 14550port로 실행
 
 cd Downloads
+
 ./QGroundControl.AppImage
 
 # mavproxy에서 out을 u에:127.0.0.1:14550 QGC로 
+
 mavproxy.py --master tcp:127.0.0.1:5760 --out udp:127.0.0.1:14550
 
