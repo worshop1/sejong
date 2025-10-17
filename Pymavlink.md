@@ -148,7 +148,7 @@ gedit ardu-sim.sh
 #!/bin/bash
 screen -S vehicle -d -m bash -c "./arducopter -S --model copter --speedup 1 --defaults parameters/copter.parm -I0 --home  37.5843,126.925,0,0"
 screen -S proxy -d -m bash -c "mavproxy.py --master tcp:127.0.0.1:5760 --out udp:127.0.0.1:14550 --out udp:127.0.0.1:14560"
-screen -S QGC -d -m bash -c "./QGroundControl.AppImage"
+screen -S QGC -d -m bash -c "./QGroundControl-x86_64.AppImage"
 ```
 
 **실행:**
